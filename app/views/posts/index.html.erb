@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="titre">A propos </h3>
+      <p class="content">Wes Anderson occupy bespoke narwhal, yr single-origin coffee Truffaut semiotics listicle sriracha asymmetrical. Butcher aesthetic PBR vinyl Intelligentsia narwhal wolf ennui four loko readymade asymmetrical hoodie meditation street art High Life. Biodiesel leggings cornhole paleo, plaid iPhone keffiyeh 8-bit kale chips mustache High Life organic heirloom. Helvetica selfies YOLO Bushwick Williamsburg. Sartorial narwhal bitters, normcore tilde hashtag small batch mumblecore deep v pour-over tattooed lomo vinyl Carles. Wes Anderson try-hard distillery banh mi Austin cold-pressed. Narwhal letterpress sriracha next level keytar, Banksy actually +1 Neutra Echo Park food truck XOXO Etsy scenester.
+
+      Tofu Echo Park scenester bicycle rights. Locavore fixie authentic VHS, banh mi post-ironic wayfarers Portland. Yr freegan single-origin coffee cliche actually Thundercats, mlkshk Intelligentsia tofu Helvetica bespoke polaroid. Pinterest Williamsburg banjo, actually literally hashtag Blue Bottle cray raw denim DIY pug quinoa meggings flexitarian cold-pressed. Wayfarers forage iPhone semiotics. Pour-over gluten-free fixie, Thundercats Portland readymade Kickstarter fap XOXO messenger bag. Chillwave tofu single-origin coffee, VHS 3 wolf moon 90's hashtag roof party Williamsburg.</p>
+    </div>
+    <div class="col-md-4">
+      <h3 class="titre">mes derniers articles</h3>
+      <div class="content">
+        <% @posts.each do |post| %>
+          <h3><%= link_to post.title.capitalize.first(24), post %></h3>
+          <p class="date"><%= post.created_at.strftime("%d %B %Y") %></p>
+
+          <%= link_to "Effacer", post_path(post), method: :delete, data: { confirm: "Etes vous certain de vouloir effacer ce post ?"} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -13,6 +13,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'redcarpet', '~> 3.3.2'
+gem 'pygments.rb', '~> 0.6.3'
 
 group :development, :test do
   gem 'binding_of_caller'

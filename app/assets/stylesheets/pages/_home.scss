@@ -2,3 +2,22 @@
  * SASS code SPECIFIC TO your home page
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
+
+.titre {
+  text-transform: uppercase;
+  color: #2a2f35;
+  border-bottom: 3px solid #d6dce0;
+  padding-bottom:30px;
+}
+
+.content {
+  color: #9eafba;
+}
+
+a {
+  color: #9eafba !important;
+  &:hover {
+          color: #33acb7 !important;
+          text-decoration:none;
+        }
+}

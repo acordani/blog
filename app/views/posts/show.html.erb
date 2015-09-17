@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="text-center">
+        <p class="date"><%= @post.created_at.strftime("%d %B %Y") %></p>
+        <h2><%= @post.title %></h2>
+        <hr>
+        <p><%= markdown(@post.content) %></p>
+        <div id="share_box">
+            <p>Share <%= @post.title %></p>
+            <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @acordani &mdash; &amp;url=<%= url_for([ @post, { only_path: false } ]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= url_for([ @post, { only_path: false } ]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([ @post, { only_path: false } ]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </div>
+          <hr>
+          <%= render 'disqs' %>
+        <%= link_to "Editer", edit_post_path(@post) %>
+        <%= link_to "Retourner à la liste de tous les posts", posts_path %>
+      </div>
+    </div>
+  </div>
+</div>
